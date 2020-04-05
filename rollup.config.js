@@ -5,11 +5,13 @@ import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
+import sveltePreprocess from 'svelte-preprocess'
+import css from "rollup-plugin-css-only";
 
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-  input: "index.js",
+  input: "src/index.js",
   output: {
     sourcemap: true,
     format: "iife",
@@ -17,9 +19,11 @@ export default {
     file: "public/bundle.js"
   },
   plugins: [
+    css({ output: "public/extra.css" }),
     svelte({
       // enable run-time checks when not in production
       dev: !production,
+      preprocess: sveltePreprocess({ postcss: true }),
       // we'll extract any component CSS out into
       // a separate file — better for performance
       css: css => {

@@ -1,0 +1,10 @@
+<style global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  html,
+  body {
+    font-family: sans-serif;
+  }
+</style>
