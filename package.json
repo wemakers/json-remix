@@ -21,7 +21,7 @@
     "@fullhuman/postcss-purgecss": "^2.1.0",
     "@json-editor/json-editor": "2.1.0",
     "jsoneditor": "8.6.4",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "object-scan": "11.0.3",
     "postcss-easy-import": "^3.0.0",
     "postcss-import": "^12.0.1",
